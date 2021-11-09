@@ -28,7 +28,7 @@
     </div>
 
     <th:block th:fragment="displayList">
-        <span th:each="job : ${jobs}">
+        <th:block th:each="job : ${jobs}">
             <table class="job-listing" th:each="category : ${job}">
                 <tr>
                     <td>ID</td>
@@ -55,7 +55,7 @@
                     <td th:text="${category.getCoreCompetency()}"></td>
                 </tr>
             </table>
-        </span>
+        </th:block>
     </th:block>
 
 </body>
