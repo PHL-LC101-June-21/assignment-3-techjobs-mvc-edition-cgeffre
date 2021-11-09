@@ -2,17 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head">
 </head>
-<body>
+    <body class="container body-content">
 
-<div th:replace="fragments :: page-header"></div>
+        <div th:replace="fragments :: page-header"></div>
 
-<div class="container body-content">
+         <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+        <span th:replace="fragments :: displayList"></span>
 
-    <!-- TODO #1 - Use a loop to display job results in a table. -->
-
-</div>
-
-</body>
+    </body>
 </html>
