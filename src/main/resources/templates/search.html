@@ -14,16 +14,24 @@
         <h2>Search by:</h2>
 
         <p>
-            <span th:each="column : ${columns}">
+            <span th:each="column : ${columns}" th:if="${lastSearchType == null}">
                 <input
                         type="radio"
                         name="searchType"
                         th:id="${column.key}"
                         th:value="${column.key}"
-                        th:checked="${column.key == 'all'}"/>
+                        th:checked="${column.key == 'all'}" />
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
-
+            <span th:each="column : ${columns}" th:if="${lastSearchType != null}">
+                <input
+                        type="radio"
+                        name="searchType"
+                        th:id="${column.key}"
+                        th:value="${column.key}"
+                        th:checked="${column.key == lastSearchType}" />
+                <label th:for="${column.key}" th:text="${column.value}"></label>
+            </span>
         </p>
 
         <p>
